@@ -5,8 +5,8 @@ from django.db import models
 
 class Projeto(models.Model):
     titulo = models.CharField("Título",max_length=256)
-    data_inicio = models.DateField("Data de Início",auto_now_add=True, null=False)
-    data_termino = models.DateField("Data de Término",auto_now_add=True, null=False)
+    data_inicio = models.DateField("Data de Início", null=False)
+    data_termino = models.DateField("Data de Término", null=False)
     justificativa =  models.TextField("Justificativa")
     metodologia = models.TextField("Metodologia")
     resultados_esperados = models.TextField("Resultados Esperados")
