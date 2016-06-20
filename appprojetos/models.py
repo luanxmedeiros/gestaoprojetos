@@ -5,8 +5,8 @@ from django.db import models
 
 class Projeto(models.Model):
     titulo = models.CharField("Título",max_length=256)
-    data_inicio = models.DateTimeField("Data de Início",auto_now_add=True, null=False)
-    data_termmino = models.DateTimeField("Data de Término",auto_now_add=True, null=False)
+    data_inicio = models.DateField("Data de Início",auto_now_add=True, null=False)
+    data_termino = models.DateField("Data de Término",auto_now_add=True, null=False)
     justificativa =  models.TextField("Justificativa")
     metodologia = models.TextField("Metodologia")
     resultados_esperados = models.TextField("Resultados Esperados")
@@ -15,7 +15,7 @@ class Projeto(models.Model):
 class AtividadesProjeto(models.Model):
     descricao = models.CharField("Descrição", max_length=500)
     data_inicio = models.DateField("Data de Início", null=False)
-    data_termmino = models.DateField("Data de Término", null=False)
+    data_termino = models.DateField("Data de Término", null=False)
     custo = models.DecimalField("Custo",max_digits=20, decimal_places=2)
     projeto = models.ForeignKey(Projeto,on_delete=models.PROTECT, verbose_name="Projeto")
 
