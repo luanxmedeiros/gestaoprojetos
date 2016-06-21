@@ -22,13 +22,17 @@ class Projeto(models.Model):
     membros = models.ManyToManyField(Membro, through="MembroProjeto")
 
 
-class AtividadeProjeto(models.Model):
+class Atividade(models.Model):
     descricao = models.CharField("Descrição", max_length=500)
     data_inicio = models.DateField("Data de Início", null=False)
     data_termino = models.DateField("Data de Término")
     custo = models.DecimalField("Custo",max_digits=20, decimal_places=2)
-    projeto = models.ForeignKey(Projeto,on_delete=models.PROTECT, verbose_name="Projeto", null=False)
+    projeto = models.ManyToManyField(Projeto,through="AtividadeProjeto")
 
+class AtividadeProjeto(models.Model):
+    atividade=models.ForeignKey(Atividade, on_delete=models.PROTECT, verbose_name="Projeto", null=False)
+    projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT, verbose_name="Projeto", null=False)
+    unique_together = ('projeto', 'atividade')
 
 class MembroProjeto(models.Model):
     projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT, verbose_name="Projeto", null=False)
