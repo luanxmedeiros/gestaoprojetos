@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
 class Membro(models.Model):
     nome = models.CharField("Nome", max_length=250, null=False)
     cpf = models.CharField("CPF", max_length=11, unique=True, null=False)
