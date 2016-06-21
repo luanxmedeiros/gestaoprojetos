@@ -4,7 +4,7 @@ from django.db import models
 
 class Membro(models.Model):
     nome = models.CharField("Nome", max_length=250, null=False)
-    cpf = models.CharField("CPF", max_length=11, unique=True, null=False)
+    cpf = models.CharField("CPF", max_length=14, unique=True, null=False)
     data_nascimento = models.DateField("Data de Nascimento", null=False)
     email = models.EmailField("E-Mail", max_length=200)
     telefone = models.CharField("Telefone", max_length=20)
