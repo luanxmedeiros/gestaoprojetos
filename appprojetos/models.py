@@ -13,7 +13,7 @@ class Projeto(models.Model):
 class AtividadesProjeto(models.Model):
     descricao = models.CharField("Descrição", max_length=500, null=False)
     data_inicio = models.DateField("Data de Início", null=False)
-    data_termino = models.DateField("Data de Término", null=False)
+    data_termino = models.DateField("Data de Término")
     custo = models.DecimalField("Custo",max_digits=20, decimal_places=2)
     projeto = models.ForeignKey(Projeto,on_delete=models.PROTECT, verbose_name="Projeto")
 
