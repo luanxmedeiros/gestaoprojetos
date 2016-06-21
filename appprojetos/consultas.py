@@ -5,3 +5,11 @@ c. Listar todos as pessoas que fazem parte do Staff da Universidade cujo o nome 
 d. Listar o custo total de cada projeto (Valor 0,5 - Extra).
 '''
 
+# LETRA A
+# LETRA B
+# LETRA C
+from appprojetos.models import *
+for membro in Membro.objects.filter(nome__startswith='L'):
+    print("Nome:",membro.nome)
+
+# LETRA D
