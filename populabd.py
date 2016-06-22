@@ -42,7 +42,7 @@ ativ05=AtividadeProjeto(descricao='Minerar Dados',data_inicio='2016-06-20', cust
 ativ06=AtividadeProjeto(descricao='Criação de Templates',data_inicio='2015-05-20', custo=1110.0,projeto=proj01)
 ativ07=AtividadeProjeto(descricao='Modelagem de Banco',data_inicio='2016-06-20', custo=1110.0,projeto=proj02)
 ativ08=AtividadeProjeto(descricao='Modelagem de Classe',data_inicio='2016-06-20', custo=1110.0,projeto=proj01)
-ativ09=AtividadeProjeto(descricao='Levantar Requisitos',data_inicio='2015-05-20', custo=1110.0,projeto=proj02)
+ativ09=AtividadeProjeto(descricao='Criação de Testes Automatizados',data_inicio='2015-05-20', custo=1110.0,projeto=proj02)
 
 
 ativ01.save()
