@@ -24,7 +24,7 @@ membro10.save()
 
 # Criando projetos
 proj01=Projeto(titulo='Proj1', data_inicio='2015-02-10', justificativa='Projeto de pesquisa', metodologia='pesquisa', resultados_esperados='conclusão da pesquisa')
-proj02=Projeto(titulo='Proj1', data_inicio='2015-01-21', justificativa='Projeto de extensão', metodologia='pesquisa', resultados_esperados='Implantação do projeto')
+proj02=Projeto(titulo='Proj2', data_inicio='2015-01-21', justificativa='Projeto de extensão', metodologia='pesquisa', resultados_esperados='Implantação do projeto')
 proj01.save()
 proj02.save()
 
