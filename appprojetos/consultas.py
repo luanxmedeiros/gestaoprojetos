@@ -17,10 +17,13 @@ for atividade in AtividadeProjeto.objects.filter(data_inicio__year=2015,  data_i
 from appprojetos.models import *
 for membro in Membro.objects.filter(nome__startswith='A'):
     print("Nome:",membro.nome)
+'''
 
 # LETRA D - Listar o custo total de cada projeto (Valor 0,5 - Extra).
+from appprojetos.models import *
+from django.db.models import Sum
 query = AtividadeProjeto.objects.values('projeto').annotate(Valor=Sum('custo'))
 for x in range(len(query)):
     obj = query[x]
     print('O projeto %s custou R$ %.2f'%(Projeto.objects.get(id=obj['projeto']).titulo, obj['Valor']))
-'''
+
