@@ -20,3 +20,6 @@ from appprojetos.models import *
 for custo in AtividadeProjeto.custo():
     print("Custo:",custo)
 '''
+from appprojetos.models import *
+for custo in AtividadeProjeto.objects.filter(projeto__atividadeprojeto__custo=):
+    print("Custo:",custo)
