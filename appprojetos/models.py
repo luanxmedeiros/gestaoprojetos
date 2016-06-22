@@ -14,27 +14,23 @@ class Membro(models.Model):
 class Projeto(models.Model):
     titulo = models.CharField("Título",max_length=256, null=False)
     data_inicio = models.DateField("Data de Início", null=False)
-    data_termino = models.DateField("Data de Término", null=False)
+    data_termino = models.DateField("Data de Término", null=True, blank=True)
     justificativa =  models.TextField("Justificativa", null=False)
     metodologia = models.TextField("Metodologia", null=False)
     resultados_esperados = models.TextField("Resultados Esperados", null=False)
     #Relacionamento muitos para muitos
-    membros = models.ManyToManyField(Membro, through="MembroProjeto")
+    membros = models.ManyToManyField(Membro)
 
 
 
 class AtividadeProjeto(models.Model):
     descricao = models.CharField("Descrição", max_length=500)
     data_inicio = models.DateField("Data de Início", null=False)
-    data_termino = models.DateField("Data de Término")
+    data_termino = models.DateField("Data de Término",null=True, blank=True)
     custo = models.DecimalField("Custo",max_digits=20, decimal_places=2)
     projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT, verbose_name="Projeto")
 
 
-class MembroProjeto(models.Model):
-    projeto = models.ForeignKey(Projeto, on_delete=models.PROTECT, verbose_name="Projeto", null=False)
-    membro = models.ForeignKey(Membro, on_delete=models.PROTECT, verbose_name="Membro", null=False)
-    unique_together = ('projeto', 'membro') #Unicidade para que o membro não esteja no mesmo projeto duas vezes
 
 
 class DesenvolvimentoAtividade(models.Model):

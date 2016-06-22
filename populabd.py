@@ -23,9 +23,8 @@ membro09.save()
 membro10.save()
 
 # Criando projetos
-proj01=Projeto(titulo='Proj1', data_inicio='2015-02-10', data_termino='',justificativa='Projeto de pesquisa', metodologia='pesquisa', resultados_esperados='conclusão da pesquisa')
-proj02=Projeto(titulo='Proj1', data_inicio='2015-01-21', data_termino='',justificativa='Projeto de extensão', metodologia='pesquisa', resultados_esperados='Implantação do projeto')
-
+proj01=Projeto(titulo='Proj1', data_inicio='2015-02-10', justificativa='Projeto de pesquisa', metodologia='pesquisa', resultados_esperados='conclusão da pesquisa')
+proj02=Projeto(titulo='Proj1', data_inicio='2015-01-21', justificativa='Projeto de extensão', metodologia='pesquisa', resultados_esperados='Implantação do projeto')
 proj01.save()
 proj02.save()
 
@@ -35,22 +34,16 @@ proj02.membros.add(membro06,membro07,membro08,membro09,membro10)
 
 
 # Criando atividades
-ativ01=AtividadeProjeto(descricao='Criar o cronograma',data_inicio='2016-06-18', data_termino='', custo=2216.9,projeto=proj01)
-ativ02=AtividadeProjeto(descricao='Obter informações sobre o assunto',data_inicio='2016-06-19', data_termino='', custo=2000.1,projeto=proj01)
-ativ03=AtividadeProjeto(descricao='Documentar o projeto',data_inicio='2016-06-20', data_termino='', custo=1231.2,projeto=proj02)
-ativ04=AtividadeProjeto(descricao='Levantar Requisitos',data_inicio='2016-06-20', data_termino='', custo=1110.0,projeto=proj02)
+ativ01=AtividadeProjeto(descricao='Criar o cronograma',data_inicio='2016-06-18', custo=2216.9,projeto=proj01)
+ativ02=AtividadeProjeto(descricao='Obter informações sobre o assunto',data_inicio='2016-06-19', custo=2000.1,projeto=proj01)
+ativ03=AtividadeProjeto(descricao='Documentar o projeto',data_inicio='2016-06-20', custo=1231.2,projeto=proj02)
+ativ04=AtividadeProjeto(descricao='Levantar Requisitos',data_inicio='2016-06-20', custo=1110.0,projeto=proj02)
 
-
-#Associando atividades aos projetos
-ativ01.projeto.add(proj01)
-ativ02.projeto.add(proj01)
-ativ03.projeto.add(proj02)
-ativ04.projeto.add(proj02)
 
 ativ01.save()
 ativ02.save()
 ativ03.save()
-ativ03.save()
+ativ04.save()
 
 desenv1 = DesenvolvimentoAtividade(estagio='Reunião com a equipe', em_desenvolvimento='Debate sobre as necessidades dos cliente',atividade_projeto=ativ01)
 desenv2 = DesenvolvimentoAtividade(estagio='Refatoração de código', em_desenvolvimento='Reduzindo o número de variáveis desnecessárias',atividade_projeto=ativ03)
