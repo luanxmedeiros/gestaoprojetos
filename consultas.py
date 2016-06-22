@@ -10,7 +10,7 @@ for projetos in Projeto.objects.all():
 # LETRA B - Listar todas as atividades que tenham sido executadas no mês de maio de 2015 (Valor 0,1).
 print('\nConsulta B')
 from appprojetos.models import *
-for atividade in AtividadeProjeto.objects.filter(data_inicio__year=2015,  data_inicio__month=5).distinct():
+for atividade in AtividadeProjeto.objects.filter(data_inicio__year=2015,  data_inicio__month=5):
         print("Atividade:",atividade.descricao)
 
 # LETRA C - Listar todos as pessoas que fazem parte do Staff da Universidade cujo o nome começa com a letra A
